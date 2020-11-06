@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="cart">
+        {% for item in cart %}
+            {% with product=item.product %}
+                <a href="{{ product.get_absolute_url }}">
+                    {{ product.name }}
+                </a>
+                <p>{{ item.quantity }}</p>
+                <a href="{% "cart:cart_remove" product.id %}">Remove</a>
+                <p>Price: {{ item.price }}</p>
+                <p>Totall Price: {{ item.total_price }}</p>
+            {% endwith %}
+        {% endfor %}
+    </div>
+    <div class="sidebar">
+        <a href="{% url "core:product_list" %}" class="btn btn-secondary">Continue shopping</a>
+        <a href="#" class="btn btn-warning">Checkout</a>
+    </div>
+</div>
