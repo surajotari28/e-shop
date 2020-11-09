@@ -6,7 +6,6 @@
                     {{ product.name }}
                 </a>
                 <p>{{ item.quantity }}</p>
-                <a href="{% "cart:cart_remove" product.id %}">Remove</a>
                 <p>Price: {{ item.price }}</p>
                 <p>Totall Price: {{ item.total_price }}</p>
             {% endwith %}

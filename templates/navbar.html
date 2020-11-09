@@ -1,0 +1,19 @@
+<ul class="links">
+    <li>Home</li>
+    <li>about</li>
+    <li>
+        <div class="cart">
+            {% with total_items=cart|length %}
+                {% if cart|length > 0 %}
+                    your cart:
+                    <a href="{% url "cart:cart_detail" %}">
+                        {{ total_items }} item {{ total_items|pluralize }},
+                        ${{ cart.get_total_price }}
+                    </a>
+                {% else %}
+                    Your cart is empty
+                {% endif %}
+            {% endwith %}
+        </div>
+    </li>
+</ul>
