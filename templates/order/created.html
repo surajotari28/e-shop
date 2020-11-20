@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Thank You</h1>
+    <p>Your order has been successfully completed. Your order number is {{ order.id }}</p>
+<a href="{% url "core:home" %}">go back to homepage</a>
+{% endblock %}

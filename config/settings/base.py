@@ -23,7 +23,10 @@ INSTALLED_APPS = [
     'django_countries',
 
     #local apps
-    'core'
+    'core.apps.CoreConfig',
+    'cart.apps.CartConfig',
+    'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig'
 ]
 
 MIDDLEWARE = [
